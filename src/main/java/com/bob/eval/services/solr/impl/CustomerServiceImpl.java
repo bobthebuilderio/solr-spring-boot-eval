@@ -37,7 +37,8 @@ public class CustomerServiceImpl implements CustomerService {
     public void deleteCustomer(String id) {
         //TODO: better to throw something here instead
         if(id == null || id.equals("")) {
-            return;
+            //TODO: This is just temporary to help me clean the index when needed.
+            customerRepository.deleteAll();
         }
 
         customerRepository.deleteById(id);

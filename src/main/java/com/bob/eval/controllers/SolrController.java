@@ -3,10 +3,7 @@ package com.bob.eval.controllers;
 import com.bob.eval.models.solr.Customer;
 import com.bob.eval.services.solr.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -17,7 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/solr", headers = "Accept=*/*",
         produces = "application/json", consumes="application/json")
-public class SolrTestController {
+public class SolrController {
 
     @Autowired
     private CustomerService customerService;
@@ -30,5 +27,10 @@ public class SolrTestController {
     @RequestMapping(value ="/customers", method = RequestMethod.POST)
     public void createCustomers(@RequestBody Customer customer) {
         customerService.createCustomer(customer);
+    }
+
+    @RequestMapping(value ="/customers", method = RequestMethod.DELETE)
+    public void deleteCustomers(@RequestParam(required = false) String id) {
+        customerService.deleteCustomer(id);
     }
 }
