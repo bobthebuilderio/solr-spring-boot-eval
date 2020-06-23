@@ -4,7 +4,7 @@ package com.bob.eval.models.solr.definitions;
  *Author: Ibrahim Bou Ncoula
  */
 
-public interface SearchableCustomerDefinition {
+public interface ISearchableCustomerDefinition {
     String ID_FIELD_NAME = "id";
     String NAME_FIELD_NAME = "name";
     String GENDER_FIELD_NAME = "gender";

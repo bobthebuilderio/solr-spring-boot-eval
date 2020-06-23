@@ -14,7 +14,7 @@ import java.util.List;
 
 @Repository
 @Qualifier("CustomerRepository")
-public interface CustomerRepository extends SolrCrudRepository<Customer, String> {
+public interface CustomerSolrRepository extends SolrCrudRepository<Customer, String> {
 
     @Query(value = "*:*")
     List<Customer> getCustomers();

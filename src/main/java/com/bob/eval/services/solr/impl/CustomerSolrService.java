@@ -1,8 +1,8 @@
 package com.bob.eval.services.solr.impl;
 
 import com.bob.eval.models.solr.Customer;
-import com.bob.eval.repositories.solr.CustomerRepository;
-import com.bob.eval.services.solr.CustomerService;
+import com.bob.eval.repositories.solr.CustomerSolrRepository;
+import com.bob.eval.services.solr.ICustomerSolrService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,10 +13,10 @@ import java.util.List;
  */
 
 @Service
-public class CustomerServiceImpl implements CustomerService {
+public class CustomerSolrService implements ICustomerSolrService {
 
     @Autowired
-    private CustomerRepository customerRepository;
+    private CustomerSolrRepository customerRepository;
 
     @Override
     public List<Customer> getCustomers() {

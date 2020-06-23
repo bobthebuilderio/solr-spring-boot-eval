@@ -8,7 +8,7 @@ import java.util.List;
  *Author: Ibrahim Bou Ncoula
  */
 
-public interface CustomerService {
+public interface ICustomerSolrService {
     List<Customer> getCustomers();
     void createCustomer(Customer customer);
     void deleteCustomer(String id);

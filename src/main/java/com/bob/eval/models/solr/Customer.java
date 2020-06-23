@@ -2,7 +2,7 @@ package com.bob.eval.models.solr;
 
 import java.util.List;
 
-import com.bob.eval.models.solr.definitions.SearchableCustomerDefinition;
+import com.bob.eval.models.solr.definitions.ISearchableCustomerDefinition;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.solr.core.geo.Point;
@@ -16,7 +16,7 @@ import org.springframework.data.solr.core.mapping.SolrDocument;
  */
 
 @SolrDocument(collection = "customers")
-public class Customer implements SearchableCustomerDefinition {
+public class Customer implements ISearchableCustomerDefinition {
     @Id @Indexed
     private String Id;
 
